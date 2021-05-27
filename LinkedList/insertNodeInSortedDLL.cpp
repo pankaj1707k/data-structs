@@ -1,3 +1,18 @@
+/*
+    Insert a node (as user input) at the appropriate position in a sorted doubly linked list.
+
+    INPUT:
+    First line takes the number of test cases.
+    For each test case:
+        First line takes the number of nodes in the doubly linked list
+        Second line takes space-separated data values for the nodes (sorted in ascending order)
+        Third line takes a data value to be inserted at the appropriate position
+    
+    OUTPUT:
+    For each test case, print the doubly linked list after insertion of the new node.
+    Node values will be separated by spaces.
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;

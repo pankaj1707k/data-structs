@@ -1,3 +1,8 @@
+/*
+    Given the head pointer of two singly linked lists, both sorted in ascending order,
+    output the sorted singly linked list created upon merging the two lists while maintaining the sort order.
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;

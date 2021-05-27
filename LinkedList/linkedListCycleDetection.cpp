@@ -1,3 +1,8 @@
+/*
+    Given a singly linked list, detect whether it contains a cycle or not.
+    Output 1 if it contains a cycle and 0 if it doesn't.
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;

@@ -1,3 +1,17 @@
+/*
+    Delete duplicate nodes from a sorted singly linked list.
+    The sorted order must remain intact after deletion.
+
+    INPUT:
+    First line takes the number of test cases
+    For each test case:
+        First line takes the number of nodes in the singly linked list
+        Second line takes the data values of the nodes separated by spaces (sorted in ascending order)
+    
+    OUTPUT:
+    Singly linked list after deleting duplicate nodes for each test case
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;

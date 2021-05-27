@@ -1,3 +1,7 @@
+/*
+    Given the head pointer of two singly linked lists, output the data value of the node at which the linked lists converge.
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;

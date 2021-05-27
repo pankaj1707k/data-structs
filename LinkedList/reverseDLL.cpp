@@ -1,3 +1,7 @@
+/*
+    Given the head pointer to a doubly linked list, output the reversed list.
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;

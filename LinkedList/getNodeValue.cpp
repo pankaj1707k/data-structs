@@ -1,3 +1,18 @@
+/*
+    Get the value in the data part of the specified node in a singly linked list.
+    The node is specified using its position from the tail of the list.
+
+    INPUT:
+    First lines takes the number of test cases (T)
+    For each test case:
+        First line takes the number of nodes in the singly linked list
+        Second line takes the data values for each node separated by spaces
+        Third line takes the position of the required node from the tail of the list
+    
+    OUTPUT:
+    For each test case, the data value of the specified node is printed in a new line.
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
