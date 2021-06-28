@@ -1,3 +1,18 @@
+/*
+    Construct a BST from the given list of numbers. After the construction of BST, you are asked to delete some numbers from the BST.
+    You have to delete only one entry for one time and not all its duplicate entries. Finally, calculate and print the weighted sum of duplicate entries in the BST.
+    Weighted sum of duplicates of a BST is equal to the sum of keys of duplicate nodes multiplied by their respective counts.
+
+    INPUT:
+        First line: number of elements in BST
+        Second line: list of space-separated elements
+        Third line: number of elements to delete
+        Fourth line: list of space-separated elements to delete
+    
+    OUTPUT:
+        Single integer representing weighted sum of duplicates.
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
