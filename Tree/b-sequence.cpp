@@ -1,3 +1,29 @@
+/*
+    Any sequence of size n is called a b-sequence if:
+    1.  A_1 < A_2 < ... < A_k > A_k+1 > ... > A_n, i.e., the sequence is initially strictly increasing, reaches a maximum value and then is strictly decreasing.
+    2.  All elements in the sequence comes atmost twice (once in increasing part and second in decreasing part), except the maximum element which comes exactly once.
+    3.  All elements in the decreasing part must have come once in the increasing part.
+
+    You are given a b-sequence S, and Q operations. For each operation, you are given a value val. You have to insert val in S if and only if after insertion, S still remains a b-sequence.
+    After each operation, print the size of S and after all operations print the sequence S.
+
+    INPUT:
+        First line consists of an integer N, denoting size of S.
+        Second line consists of N space separated integers, denoting elements of S.
+        Next line consists of an integer Q, denoting number of operations.
+        Each of the following Q lines consists of an integer val.
+    
+    OUTPUT:
+        After each operation, print the size of S in a new line.
+        After all operations, print the sequence S.
+
+    CONSTRAINTS:
+        1 <= N <= 10^5
+        1 <= S_i <= 10^9
+        1 <= Q <= 10^5
+        1 <= val <= 10^9
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
