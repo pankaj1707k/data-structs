@@ -4,6 +4,7 @@ from typing import *
 
 # Method 1: O(n) [bottom-up DP approach]
 def maxSubArray(nums: List[int]) -> int:
+    """ Kadane's algorithm """
     cm = nums[0]
     mx = nums[0]
     for i in range(1,len(nums)):
