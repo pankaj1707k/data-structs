@@ -3,6 +3,7 @@
 from typing import *
 
 def maxProfit(prices: List[int])->int:
+    # Method 1
     n = len(prices)
     if n==1:
         return 0
@@ -24,6 +25,25 @@ def maxProfit(prices: List[int])->int:
             sell += 1
     
     return mp
+
+    # Method 2
+    
+    # memo = {}   # key: (i,b), value: max_profit
+    # n = len(prices)
+    # def solve(i:int, b:bool)->int:
+    #     if i >= n:
+    #         return 0
+    #     if (i,b) in memo:
+    #         return memo[(i,b)]
+    #     if b:
+    #         branch_1 = solve(i+1, False) - prices[i]    # bought
+    #         branch_2 = solve(i+1, True)     # did not buy
+    #     else:
+    #         branch_1 = solve(i+1, True) + prices[i]   # sold
+    #         branch_2 = solve(i+1, False)    # did not sell
+    #     memo[(i,b)] = max(branch_1, branch_2)
+    #     return memo[(i,b)]
+    # return solve(0,True)
         
 
 tests = [
