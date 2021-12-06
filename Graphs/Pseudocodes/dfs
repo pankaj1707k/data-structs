@@ -1,0 +1,19 @@
+DEPTH FIRST SEARCH
+
+n -> number of vertices
+m -> number of edges
+
+graph -> adjacency list
+
+visited = [False]*n
+
+void dfs(int vertex):
+    // operations to do before starting to visit any child vertex
+    visited[vertex] = True
+    for (int child in graph[vertex]):
+        if (visited[child]):  continue
+        // operations to do on the child before entering it
+        dfs(child)
+        // operations to do on the child after it has been visited
+    // operations to do after all children have been visited
+    return
