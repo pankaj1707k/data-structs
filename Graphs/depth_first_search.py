@@ -2,6 +2,7 @@
 
 from collections import defaultdict
 
+# Recursive: more memory consumption
 def dfs(vertex:int):
     visited[vertex] = True
     # Operations on vertex just after entering it
@@ -22,3 +23,16 @@ for _ in range(e):
 
 visited = [False]*(n+1)
 dfs(1)
+
+"""
+Iterative version of dfs:
+
+def dfs():
+    stack = [1]
+    while stack:
+        vertex = stack.pop()
+        for child in graph[vertex]:
+            if visited[child]: continue
+            stack.append(child)
+        visited[vertex] = True
+"""
