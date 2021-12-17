@@ -8,23 +8,26 @@ sys.stdin = open("../../input.txt", "r")
 sys.stdout = open("../../output.txt", "w")
 input = sys.stdin.readline
 
-def dfs(vertex:int, parent:int):
+
+def dfs(vertex: int, parent: int):
     sub[vertex].append(char[vertex])
     for child in tree[vertex]:
-        if child == parent: continue
+        if child == parent:
+            continue
         dfs(child, vertex)
         sub[vertex].extend(sub[child])
 
+
 n, q = map(int, input().split())
-char = [''] + input().split()
+char = [""] + input().split()
 tree = defaultdict(list)
-for _ in range(n-1):
+for _ in range(n - 1):
     u, v = map(int, input().split())
     tree[u].append(v)
     tree[v].append(u)
 
-sub = [[] for _ in range(n+1)]
-dfs(1,0)
+sub = [[] for _ in range(n + 1)]
+dfs(1, 0)
 sub_counters = [Counter(s) for s in sub]
 for _ in range(q):
     i = input().split()

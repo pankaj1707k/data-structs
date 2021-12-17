@@ -3,13 +3,16 @@
 from typing import *
 from collections import defaultdict
 
-def dfs(vertex:int, parent:int=-1):
+
+def dfs(vertex: int, parent: int = -1):
     par[vertex] = parent
     for child in tree[vertex]:
-        if child == parent: continue
-        dfs(child,vertex)
+        if child == parent:
+            continue
+        dfs(child, vertex)
 
-def findLCA(v1:int, v2:int)->int:
+
+def findLCA(v1: int, v2: int) -> int:
     path1 = []
     while v1 != -1:
         path1.append(v1)
@@ -26,13 +29,15 @@ def findLCA(v1:int, v2:int)->int:
     for i in range(min_len):
         if path1[i] == path2[i]:
             lca = path1[i]
-        else: break
-    
+        else:
+            break
+
     return lca
+
 
 n = int(input())
 tree = defaultdict(list)
-for _ in range(n-1):
+for _ in range(n - 1):
     u, v = map(int, input().split())
     tree[u].append(v)
     tree[v].append(u)
@@ -40,5 +45,5 @@ for _ in range(n-1):
 par = defaultdict(int)
 dfs(1)
 v1, v2 = map(int, input().split())
-lca = findLCA(v1,v2)
+lca = findLCA(v1, v2)
 print(lca)

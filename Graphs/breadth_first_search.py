@@ -4,7 +4,7 @@ from collections import defaultdict
 from queue import Queue
 
 # Time complexity: O(V+E), V=vertices, E=edges
-def bfs(source:int):
+def bfs(source: int):
     q = Queue()
     q.put(source)
     visited[source] = True
@@ -13,10 +13,11 @@ def bfs(source:int):
         vertex = q.get()
         print(vertex)
         for child in graph[vertex]:
-            if visited[child]: continue
+            if visited[child]:
+                continue
             q.put(child)
             visited[child] = True
-        
+
 
 # Graph input
 n, e = map(int, input().split())
@@ -26,5 +27,5 @@ for _ in range(e):
     graph[u].append(v)
     graph[v].append(u)
 
-visited = [False]*(n+1)
+visited = [False] * (n + 1)
 bfs(1)
