@@ -25,7 +25,6 @@ def calcEquation(
         visited = defaultdict(bool)
         q.put((source, 1))
         prod = -1.0
-        sub_prod = 1.0
         while not q.empty():
             vertex, sub_prod = q.get()
             for child, weight in graph[vertex]:
