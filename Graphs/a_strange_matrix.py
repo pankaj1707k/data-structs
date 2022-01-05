@@ -4,7 +4,6 @@ import sys
 from typing import *
 
 sys.stdin = open("../../input.txt", "r")
-sys.stdout = open("../../output.txt", "w")
 sys.setrecursionlimit(10 ** 6)
 input = sys.stdin.readline
 

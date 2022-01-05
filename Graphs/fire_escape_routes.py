@@ -5,7 +5,6 @@ from collections import defaultdict
 
 MOD = 10 ** 9 + 7
 sys.stdin = open("../../input.txt", "r")
-sys.stdout = open("../../output.txt", "w")
 input = sys.stdin.readline
 
 

@@ -5,7 +5,6 @@ from typing import *
 from collections import defaultdict
 
 sys.stdin = open("../../input.txt", "r")
-sys.stdout = open("../../output.txt", "w")
 input = sys.stdin.readline
 
 
