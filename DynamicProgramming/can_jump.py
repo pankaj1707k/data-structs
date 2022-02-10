@@ -2,30 +2,39 @@
 
 from typing import *
 
-# Using standard DP approach
-def canJump(nums: List[int], n: int, memo: Dict = {}) -> bool:
-    if n in memo:
-        return memo[n]
-    if n == 1:
-        return True
-    if nums[-n] >= n-1:
-        return True
-    for i in range(nums[-n], 0, -1):
-        r = canJump(nums, n-i)
-        if r:
-            memo[n] = True
+# Recursive solution (TLE)
+def canJump(nums: List[int]) -> bool:
+    memo = [-1] * 100009
+    n = len(nums)
+
+    # Is it possible to reach last index from i-th index
+    def solve(i: int) -> bool:
+        if i >= n - 1:
             return True
-    memo[n] = False
-    return False
+        if nums[i] == 0:
+            return False
+        if memo[i] != -1:
+            return memo[i]
+        for j in range(1, nums[i] + 1):
+            if solve(i + j):
+                memo[i] = True
+                return True
+
+        memo[i] = False
+        return False
+
+    return solve(0)
+
 
 # Optimal solution
 def canJump_opt(nums: List[int]):
     f = 1
-    for i in range(len(nums)-1):
-        f = max(nums[i], f-1)
-        if f==0:
+    for i in range(len(nums) - 1):
+        f = max(nums[i], f - 1)
+        if f == 0:
             return False
     return True
 
-print(canJump([2,3,1,1,4], 5))
-print(canJump_opt([3,2,1,0,4]))
+
+print(canJump([2, 3, 1, 1, 4]))
+print(canJump_opt([3, 2, 1, 0, 4]))
