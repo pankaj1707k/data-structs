@@ -30,3 +30,13 @@ def stone_game(piles: List[int]) -> bool:
         return win
 
     return game(0, n - 1, 0)
+
+
+"""
+Alternative solution:
+    Alice has the advantage of starting first which means she always wins.
+    Alice can always collect either the odd positioned piles or the even positioned piles.
+    Since, sum(piles) is odd, either of those collections will be greater than the other.
+    Given that they play optimally, Alice can always win the game.
+    Hence, without any computation, return True.
+"""
