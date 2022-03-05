@@ -2,24 +2,16 @@
 
 from typing import *
 
-def maxProfit(prices: List[int])->int:
-    n = len(prices)
-    if n == 1:
-        return 0
-    mp = 0  # max profit
-    b,s = 0,1   # b: buy, s: sell
-    while s<n and b<n-1:
-        if prices[s] < prices[b]:
-            b += 1
-        else:
-            mp = max(mp, prices[s]-prices[b])
-            s += 1
-    
-    return mp
 
-tests = [
-    [7,1,5,3,6,4],
-    [7,6,4,3,1]
-]
+def maxProfit(prices: List[int]) -> int:
+    min_price = 10009
+    max_profit = 0
+    for price in prices:
+        min_price = min(min_price, price)
+        max_profit = max(max_profit, price - min_price)
+    return max_profit
+
+
+tests = [[7, 1, 5, 3, 6, 4], [7, 6, 4, 3, 1]]
 for t in tests:
     print(maxProfit(t))
