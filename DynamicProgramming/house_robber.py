@@ -1,20 +1,23 @@
 """ https://leetcode.com/problems/house-robber/ """
 
-def rob(nums, memo={}):
+from typing import *
+from functools import cache
 
-    if tuple(nums) in memo:
-        return memo[tuple(nums)]
-    
-    if len(nums) == 0:
+
+def rob(nums: List[int]) -> int:
+    n = len(nums)
+    if n == 0:
         return 0
-    if len(nums) == 1:
+    if n == 1:
         return nums[0]
 
-    v1 = nums[0] + rob(nums[2:])
-    v2 = rob(nums[1:])
-    memo[tuple(nums)] = max(v1,v2)
-    return memo[tuple(nums)]
+    @cache
+    def solve(i: int) -> int:
+        if i < 0:
+            return 0
+        if i == 0:
+            return nums[i]
+        max_amt = max(solve(i - 1), nums[i] + solve(i - 2))
+        return max_amt
 
-
-nums = list(map(int, input().rstrip().split()))
-print(rob(nums))
+    return solve(n - 1)
