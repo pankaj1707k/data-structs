@@ -12,6 +12,7 @@ class Node:
         self.random = random
 
 
+# Time: O(n^2), Space: O(n)
 def copy_random_list(head: Optional[Node]) -> Optional[Node]:
     if head == None:
         return None
@@ -65,3 +66,25 @@ def copy_random_list(head: Optional[Node]) -> Optional[Node]:
         i += 1
 
     return new_head
+
+
+# Time: O(n), Space: O(n)
+def copy_random_list_2(head: Optional[Node]) -> Optional[Node]:
+    node_hash = {}
+    new_list = Node(0)
+    old_node = head
+    new_node = new_list
+    while old_node:
+        new_node.next = Node(old_node.val)
+        new_node = new_node.next
+        node_hash[old_node] = new_node
+        old_node = old_node.next
+
+    old_node = head
+    new_node = new_list.next
+    while old_node:
+        new_node.random = node_hash[old_node.random] if old_node.random else None
+        new_node = new_node.next
+        old_node = old_node.next
+
+    return new_list.next
