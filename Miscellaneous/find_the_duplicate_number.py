@@ -37,7 +37,7 @@ def aliter(nums: List[int]) -> int:
             if nums[i] & mask:
                 nums_count += 1
             # if nums_count > base_count then the bit at position 'bit' must be set in the duplicate
-            if nums_count > base_count:
-                duplicate |= mask
+        if nums_count > base_count:
+            duplicate |= mask
 
-        return duplicate
+    return duplicate
