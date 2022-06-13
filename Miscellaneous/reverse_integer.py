@@ -35,3 +35,28 @@ class Solution:
             count -= 1
 
         return reverse * sign
+
+    def reverse(self, x: int) -> int:
+        INT_MAX = (1 << 31) - 1
+        sign = -1 if x < 0 else 1
+        x = abs(x)
+        reverse = 0
+        while x:
+            digit = x % 10
+            x //= 10
+            # Check for overflow
+            if (
+                (sign == 1)
+                and (reverse > INT_MAX // 10)
+                or (reverse == INT_MAX // 10 and digit > 7)
+            ):
+                return 0
+            # Check for underflow
+            if (
+                (sign == -1)
+                and (reverse > INT_MAX // 10)
+                or (reverse == INT_MAX // 10 and digit > 8)
+            ):
+                return 0
+            reverse = reverse * 10 + digit
+        return reverse * sign
